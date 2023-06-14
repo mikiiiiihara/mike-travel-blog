@@ -36,7 +36,7 @@ const Home: React.FC<Props> = ({ blog }) => {
     <div className={styles.main}>
       <Link href="/">ホームへ戻る</Link>
       <h2 className={styles.title}>{blog.title}</h2>
-      <p className={styles.publishAt}>{blog.createdAt}</p>
+      <p className={styles.publishAt}>{blog.publishAt}</p>
       <div
         dangerouslySetInnerHTML={{ __html: `${blog.body}` }}
         className={styles.post}

@@ -18,6 +18,15 @@
       text-decoration: none;
     }
   }
+  .imageWrapper {
+    width: 90%;
+  }
+
+  @media (min-width: 600px) {
+    .imageWrapper {
+      width: 50%;
+    }
+  }
 }
 
 .post {

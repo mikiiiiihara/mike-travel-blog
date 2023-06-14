@@ -2,6 +2,15 @@ export type Blog = {
   id: string;
   title: string;
   body: string;
-  createdAt: string;
+  tags: Tag[];
+  thumbnail: {
+    url: string;
+  };
+  publishAt: string;
   updatedAt: string;
+};
+
+export type Tag = {
+  if: string;
+  tag: string;
 };
