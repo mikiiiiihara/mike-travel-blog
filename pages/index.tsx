@@ -32,7 +32,8 @@ const Home: React.FC<Props> = ({ blogs }) => {
                 src={blog.thumbnail.url}
                 width={1000} // 元の画像の実際の幅を指定
                 height={500} // 元の画像の実際の高さを指定
-                layout="responsive"
+                priority
+                style={{ position: "relative" }}
                 alt="thumbnail"
               />
             </div>
