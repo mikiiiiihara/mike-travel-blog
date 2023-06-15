@@ -8,7 +8,6 @@ interface Props {
 
 export const Pagination: React.FC<Props> = ({ totalCount, id }) => {
   const PER_PAGE = 2;
-  console.log(typeof id);
 
   const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
