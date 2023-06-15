@@ -3,3 +3,19 @@ body {
   padding: 0;
   background: #f3f5f8;
 }
+
+@media (max-width: 768px) {
+  .display_none_mobile {
+    display: none;
+  }
+
+  .display_block_mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .display_inline_block_pc {
+    display: inline-block;
+  }
+}
