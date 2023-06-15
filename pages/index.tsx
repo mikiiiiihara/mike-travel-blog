@@ -4,7 +4,6 @@ import { Blog, Tag } from "../types.ts/blog";
 import Link from "next/link";
 import Image from "next/image";
 import { TagItem } from "../components/tag";
-import { useState } from "react";
 import { Pagination } from "../components/pagination";
 import { PER_PAGE } from "../constants/constants";
 
@@ -33,25 +32,6 @@ type Props = {
 };
 
 const Home: React.FC<Props> = ({ blogs, tags, totalCount }) => {
-  const [showBlogs, setShowBlogs] = useState(blogs);
-  // タグ絞り込み
-  const selectTag = (tag: string) => {
-    if (tag === "all") {
-      setShowBlogs(blogs);
-    } else {
-      const selectedBlogs = blogs.filter((blog) => {
-        const haveTags = blog.tags.map((tag) => tag.tag);
-        return haveTags.includes(tag);
-      });
-      setShowBlogs(selectedBlogs);
-    }
-
-    // 画面最上部へスクロールさせる
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <>
       <div className={styles.header}>
@@ -67,8 +47,8 @@ const Home: React.FC<Props> = ({ blogs, tags, totalCount }) => {
         </div>
       </div>
       <div className={styles.blogs}>
-        {!showBlogs.length && <p>投稿がありません。</p>}
-        {showBlogs.map((blog) => (
+        {!blogs.length && <p>投稿がありません。</p>}
+        {blogs.map((blog) => (
           <li key={blog.id}>
             <Link href={`blog/${blog.id}`}>
               <h2>{blog.title}</h2>
@@ -94,11 +74,7 @@ const Home: React.FC<Props> = ({ blogs, tags, totalCount }) => {
         <div>
           <h2>タグ一覧</h2>
           {tags.map((tag) => (
-            <TagItem
-              name={tag.tag}
-              key={tag.id}
-              onClick={() => selectTag(tag.tag)}
-            />
+            <TagItem name={tag.tag} key={tag.id} />
           ))}
         </div>
         <div>
