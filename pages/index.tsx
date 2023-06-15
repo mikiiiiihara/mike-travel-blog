@@ -33,17 +33,17 @@ const Home: React.FC<Props> = ({ blogs, tags }) => {
           <li key={blog.id}>
             <Link href={`blog/${blog.id}`}>
               <h2>{blog.title}</h2>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={blog.thumbnail.url}
+                  width={1000} // 元の画像の実際の幅を指定
+                  height={500} // 元の画像の実際の高さを指定
+                  priority
+                  style={{ position: "relative" }}
+                  alt="thumbnail"
+                />
+              </div>
             </Link>
-            <div className={styles.imageWrapper}>
-              <Image
-                src={blog.thumbnail.url}
-                width={1000} // 元の画像の実際の幅を指定
-                height={500} // 元の画像の実際の高さを指定
-                priority
-                style={{ position: "relative" }}
-                alt="thumbnail"
-              />
-            </div>
             {blog.tags.map((tag) => (
               <TagItem name={tag.tag} key={tag.id} />
             ))}
