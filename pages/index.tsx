@@ -4,6 +4,7 @@ import { Blog, Tag } from "../types.ts/blog";
 import Link from "next/link";
 import Image from "next/image";
 import { TagItem } from "../components/tag";
+import { useState } from "react";
 
 // SSG
 // microCMSへAPIリクエスト
@@ -25,11 +26,45 @@ type Props = {
 };
 
 const Home: React.FC<Props> = ({ blogs, tags }) => {
+  const [showBlogs, setShowBlogs] = useState(blogs);
+  // タグ絞り込み
+  const selectTag = (tag: string) => {
+    if (tag === "all") {
+      setShowBlogs(blogs);
+    } else {
+      const selectedBlogs = blogs.filter((blog) => {
+        const haveTags = blog.tags.map((tag) => tag.tag);
+        return haveTags.includes(tag);
+      });
+      setShowBlogs(selectedBlogs);
+    }
+
+    // 画面最上部へスクロールさせる
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
-      <h1>Mike Travel Blog</h1>
+      <div className={styles.header}>
+        <div className={styles.imageWrapper}>
+          <Image
+            src="/header.png"
+            width={820} // 元の画像の実際の幅を指定
+            height={200} // 元の画像の実際の高さを指定
+            priority
+            style={{ position: "relative" }}
+            alt="header"
+          />
+        </div>
+      </div>
+      <div>
+        <h2>ピックアップ記事</h2>
+      </div>
       <div className={styles.blogs}>
-        {blogs.map((blog) => (
+        {!showBlogs.length && <p>投稿がありません。</p>}
+        {showBlogs.map((blog) => (
           <li key={blog.id}>
             <Link href={`blog/${blog.id}`}>
               <h2>{blog.title}</h2>
@@ -50,11 +85,21 @@ const Home: React.FC<Props> = ({ blogs, tags }) => {
           </li>
         ))}
       </div>
-      <div className={styles.tags}>
-        <h2>タグ一覧</h2>
-        {tags.map((tag) => (
-          <TagItem name={tag.tag} key={tag.id} />
-        ))}
+      <div className={styles.footer}>
+        <div>
+          <h2>タグ一覧</h2>
+          <p onClick={() => selectTag("all")}>ホーム</p>
+          {tags.map((tag) => (
+            <TagItem
+              name={tag.tag}
+              key={tag.id}
+              onClick={() => selectTag(tag.tag)}
+            />
+          ))}
+        </div>
+        <div>
+          <h2>プロフィール</h2>
+        </div>
       </div>
     </>
   );

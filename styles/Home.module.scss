@@ -1,14 +1,29 @@
-.main {
-  width: 960px;
-  margin: 0 auto;
+.header {
+  width: 100%;
 }
-
 .title {
   margin-bottom: 20px;
 }
 
 .createAt {
   margin-bottom: 40px;
+}
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+  }
 }
 
 .blogs {
@@ -24,11 +39,14 @@
     list-style: none;
     display: inline-block;
     padding: 0.6rem;
-    border: 0.5px solid #e0e0e0;
+    border: 0.5px solid #d3d3d3;
     border-radius: 1rem;
-    margin: 1rem;
+    margin: 0.6rem;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
     width: 40%;
+    > .imageWrapper > img {
+      padding: 1rem;
+    }
     > a {
       text-decoration: none;
     }
@@ -36,30 +54,17 @@
       width: 100%;
     }
   }
-  .imageWrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding-top: 50%;
-    box-sizing: border-box;
-    padding: 1rem;
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
 }
 
-.tags {
+.footer {
   width: 30%;
   display: inline-block;
   margin-left: auto;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 0.8rem;
+  border: 0.5px solid #d3d3d3;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
   @media (max-width: 768px) {
     width: 100%;
     display: block;
