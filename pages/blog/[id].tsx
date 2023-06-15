@@ -2,6 +2,7 @@ import { client } from "../../libs/client";
 import { Blog } from "../../types.ts/blog";
 import styles from "../../styles/Home.module.scss";
 import Link from "next/link";
+import { TagItem } from "../../components/tag";
 
 // SSG
 // microCMSへAPIリクエスト
@@ -37,6 +38,9 @@ const Home: React.FC<Props> = ({ blog }) => {
       <Link href="/">ホームへ戻る</Link>
       <h2 className={styles.title}>{blog.title}</h2>
       <p className={styles.publishAt}>{blog.publishAt}</p>
+      {blog.tags.map((tag) => (
+        <TagItem name={tag.tag} key={tag.id} />
+      ))}
       <div
         dangerouslySetInnerHTML={{ __html: `${blog.body}` }}
         className={styles.post}

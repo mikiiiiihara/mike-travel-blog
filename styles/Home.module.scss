@@ -18,12 +18,12 @@
   vertical-align: top;
   box-sizing: border-box;
   @media (max-width: 768px) {
-    width: 100%;
+    width: 90%;
   }
   > li {
     list-style: none;
     display: inline-block;
-    padding: 1rem 0;
+    padding: 0.6rem;
     border: 0.5px solid #e0e0e0;
     border-radius: 1rem;
     margin: 1rem;

@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.scss";
 import { Blog, Tag } from "../types.ts/blog";
 import Link from "next/link";
 import Image from "next/image";
+import { TagItem } from "../components/tag";
 
 // SSG
 // microCMSへAPIリクエスト
@@ -44,7 +45,7 @@ const Home: React.FC<Props> = ({ blogs, tags }) => {
               />
             </div>
             {blog.tags.map((tag) => (
-              <div key={tag.id}>{tag.tag}</div>
+              <TagItem name={tag.tag} key={tag.id} />
             ))}
           </li>
         ))}
@@ -52,7 +53,7 @@ const Home: React.FC<Props> = ({ blogs, tags }) => {
       <div className={styles.tags}>
         <h2>タグ一覧</h2>
         {tags.map((tag) => (
-          <div key={tag.id}>{tag.tag}</div>
+          <TagItem name={tag.tag} key={tag.id} />
         ))}
       </div>
     </>
