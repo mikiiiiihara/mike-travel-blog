@@ -12,6 +12,14 @@
 }
 
 .blogs {
+  display: inline-block;
+  margin-right: auto;
+  width: 70%;
+  vertical-align: top;
+  box-sizing: border-box;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   > li {
     list-style: none;
     display: inline-block;
@@ -20,12 +28,12 @@
     border-radius: 1rem;
     margin: 1rem;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
-    width: 100%;
+    width: 40%;
     > a {
       text-decoration: none;
     }
-    @media (min-width: 600px) {
-      width: 30%;
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
   .imageWrapper {
@@ -43,6 +51,19 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+}
+
+.tags {
+  width: 30%;
+  display: inline-block;
+  margin-left: auto;
+  box-sizing: border-box;
+  padding: 1rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+    margin: auto;
   }
 }
 

@@ -11,6 +11,6 @@ export type Blog = {
 };
 
 export type Tag = {
-  if: string;
+  id: string;
   tag: string;
 };

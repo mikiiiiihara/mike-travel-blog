@@ -1,6 +1,6 @@
 import { client } from "../libs/client";
 import styles from "../styles/Home.module.scss";
-import { Blog } from "../types.ts/blog";
+import { Blog, Tag } from "../types.ts/blog";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,9 +8,11 @@ import Image from "next/image";
 // microCMSへAPIリクエスト
 export const getStaticProps = async () => {
   const blog = await client.get({ endpoint: "blog" });
+  const tag = await client.get({ endpoint: "tag" });
   return {
     props: {
       blogs: blog.contents,
+      tags: tag.contents,
     },
   };
 };
@@ -18,15 +20,19 @@ export const getStaticProps = async () => {
 // Props（blogsとtags）の型
 type Props = {
   blogs: Blog[];
+  tags: Tag[];
 };
 
-const Home: React.FC<Props> = ({ blogs }) => {
+const Home: React.FC<Props> = ({ blogs, tags }) => {
   return (
-    <div className={styles.blogs}>
-      {blogs.map((blog) => (
-        <li key={blog.id}>
-          <Link href={`blog/${blog.id}`}>
-            <h2>{blog.title}</h2>
+    <>
+      <h1>Mike Travel Blog</h1>
+      <div className={styles.blogs}>
+        {blogs.map((blog) => (
+          <li key={blog.id}>
+            <Link href={`blog/${blog.id}`}>
+              <h2>{blog.title}</h2>
+            </Link>
             <div className={styles.imageWrapper}>
               <Image
                 src={blog.thumbnail.url}
@@ -37,10 +43,19 @@ const Home: React.FC<Props> = ({ blogs }) => {
                 alt="thumbnail"
               />
             </div>
-          </Link>
-        </li>
-      ))}
-    </div>
+            {blog.tags.map((tag) => (
+              <div key={tag.id}>{tag.tag}</div>
+            ))}
+          </li>
+        ))}
+      </div>
+      <div className={styles.tags}>
+        <h2>タグ一覧</h2>
+        {tags.map((tag) => (
+          <div key={tag.id}>{tag.tag}</div>
+        ))}
+      </div>
+    </>
   );
 };
 
