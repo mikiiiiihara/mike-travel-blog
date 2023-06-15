@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./pagination.module.scss";
 
-interface Props {
+type Props = {
   totalCount: number;
   id: number;
-}
+};
 
 export const Pagination: React.FC<Props> = ({ totalCount, id }) => {
   const PER_PAGE = 2;

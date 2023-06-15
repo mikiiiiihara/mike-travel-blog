@@ -1,11 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
-import styles from "../../../styles/Home.module.scss";
 import { client } from "../../../libs/client";
 import { Blog, Tag } from "../../../types.ts/blog";
-import { Pagination } from "../../../components/pagination";
-import { TagItem } from "../../../components/tag";
 import { PER_PAGE } from "../../../constants/constants";
+import { Menu } from "../../../components/menu";
+import { Blogs } from "../../../components/blogs";
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
@@ -50,53 +47,8 @@ type Props = {
 const BlogPageId: React.FC<Props> = ({ blogs, tags, totalCount, id }) => {
   return (
     <>
-      <div className={styles.header}>
-        <div className={styles.imageWrapper}>
-          <Image
-            src="/header.png"
-            width={820} // 元の画像の実際の幅を指定
-            height={200} // 元の画像の実際の高さを指定
-            priority
-            style={{ position: "relative" }}
-            alt="header"
-          />
-        </div>
-      </div>
-      <div className={styles.blogs}>
-        {!blogs.length && <p>投稿がありません。</p>}
-        {blogs.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`../../blog/${blog.id}`}>
-              <h2>{blog.title}</h2>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={blog.thumbnail.url}
-                  width={1000} // 元の画像の実際の幅を指定
-                  height={500} // 元の画像の実際の高さを指定
-                  priority
-                  style={{ position: "relative" }}
-                  alt="thumbnail"
-                />
-              </div>
-            </Link>
-            {blog.tags.map((tag) => (
-              <TagItem name={tag.tag} key={tag.id} />
-            ))}
-          </li>
-        ))}
-        <Pagination totalCount={totalCount} id={id} />
-      </div>
-      <div className={styles.footer}>
-        <div>
-          <h2>タグ一覧</h2>
-          {tags.map((tag) => (
-            <TagItem name={tag.tag} key={tag.id} />
-          ))}
-        </div>
-        <div>
-          <h2>プロフィール</h2>
-        </div>
-      </div>
+      <Blogs blogs={blogs} totalCount={totalCount} currentPageId={id} />
+      <Menu tags={tags} />
     </>
   );
 };

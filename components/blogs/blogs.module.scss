@@ -1,0 +1,27 @@
+.blogs {
+  display: inline-block;
+  margin-right: auto;
+  width: 70%;
+  vertical-align: top;
+  box-sizing: border-box;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+  > li {
+    list-style: none;
+    display: inline-block;
+    background: white;
+    padding: 0.6rem;
+    border: 0.5px solid #d3d3d3;
+    border-radius: 0.8rem;
+    margin: 0.6rem;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
+    width: 40%;
+    > a {
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
