@@ -1,0 +1,17 @@
+.item {
+  margin: 0.2rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.3rem;
+  display: inline-block;
+  > .itemLink {
+    color: white;
+    background: rgb(78, 65, 226);
+    margin: 0.2rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.3rem;
+    > a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
