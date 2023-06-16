@@ -12,8 +12,12 @@ const BlogCardComponent: React.FC<Props> = ({ blog }) => {
   return (
     <>
       <Link href={`/blog/${blog.id}`}>
-        <h2>{blog.title}</h2>
         <div className={styles.imageWrapper}>
+          <div className={styles.displayTag}>
+            {blog.tags.map((tag) => (
+              <TagItem name={tag.tag} key={tag.id} />
+            ))}
+          </div>
           <Image
             src={blog.thumbnail.url}
             width={1000} // 元の画像の実際の幅を指定
@@ -23,10 +27,8 @@ const BlogCardComponent: React.FC<Props> = ({ blog }) => {
             alt="thumbnail"
           />
         </div>
+        <h2 className={styles.title}>{blog.title}</h2>
       </Link>
-      {blog.tags.map((tag) => (
-        <TagItem name={tag.tag} key={tag.id} />
-      ))}
     </>
   );
 };
