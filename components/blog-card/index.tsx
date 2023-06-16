@@ -14,7 +14,7 @@ const BlogCardComponent: React.FC<Props> = ({ blog }) => {
       <Link href={`/blog/${blog.id}`}>
         <div className={styles.imageWrapper}>
           <div className={styles.displayTag}>
-            <TagItem name={blog.tag.tag} key={blog.tag.id} />
+            <TagItem name={blog.tag.tag} id={blog.tag.id} key={blog.tag.id} />
           </div>
           <Image
             src={blog.thumbnail.url}

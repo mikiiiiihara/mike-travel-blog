@@ -32,7 +32,7 @@ const MenuComponent: React.FC<Props> = ({ tags }) => {
         <div className={styles.menu}>
           <div className={styles.displayNoneMobile}>
             <div>
-              <h2>タグ一覧</h2>
+              <h2>カテゴリ一覧</h2>
               {tags.map((tag) => (
                 <TagItem name={tag.tag} id={tag.id} key={tag.id} />
               ))}

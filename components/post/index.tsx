@@ -12,7 +12,7 @@ const PostComponent: React.FC<Props> = ({ blog }) => {
     <div className={styles.post}>
       <h2 className={styles.title}>{blog.title}</h2>
       <p className={styles.publishAt}>{blog.publishAt}</p>
-      <TagItem name={blog.tag.tag} key={blog.tag.id} />
+      <TagItem name={blog.tag.tag} id={blog.tag.id} key={blog.tag.id} />
       <div
         dangerouslySetInnerHTML={{ __html: `${blog.body}` }}
         className={styles.content}
