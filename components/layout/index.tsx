@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { Header } from "../header";
+import { Footer } from "../footer";
 
 type Props = {
   children: ReactElement;
@@ -10,6 +11,7 @@ const LayoutComponent: React.FC<Props> = ({ children }) => {
     <>
       <Header />
       {children}
+      <Footer />
     </>
   );
 };
