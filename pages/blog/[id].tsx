@@ -36,9 +36,9 @@ type Props = {
 
 const Home: React.FC<Props> = ({ blog, tags }) => {
   return (
-    <>
+    <div className="wrapper">
       <Post blog={blog} /> <Menu tags={tags} />
-    </>
+    </div>
   );
 };
 

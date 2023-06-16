@@ -41,10 +41,10 @@ type Props = {
 
 const TagId: React.FC<Props> = ({ blogs, tags, totalCount, id }) => {
   return (
-    <>
+    <div className="wrapper">
       <Blogs blogs={blogs} totalCount={totalCount} currentPageId={id} />
       <Menu tags={tags} />
-    </>
+    </div>
   );
 };
 
