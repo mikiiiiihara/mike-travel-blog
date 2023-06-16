@@ -18,14 +18,12 @@ const BlogsComponent: React.FC<Props> = ({
     <div className={styles.blogs}>
       {!blogs.length && <p>投稿がありません。</p>}
       <ul>
-        {/* 追加 */}
         {blogs.map((blog) => (
           <li key={blog.id} className={styles.blogItem}>
             <BlogCard blog={blog} />
           </li>
         ))}
-      </ul>{" "}
-      {/* 追加 */}
+      </ul>
       <Pagination totalCount={totalCount} id={currentPageId} />
     </div>
   );

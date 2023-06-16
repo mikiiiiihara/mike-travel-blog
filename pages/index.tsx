@@ -32,10 +32,10 @@ type Props = {
 // TODO: パンくずリスト表示してあげる
 const Home: React.FC<Props> = ({ blogs, tags, totalCount }) => {
   return (
-    <>
+    <div className="wrapper">
       <Blogs blogs={blogs} totalCount={totalCount} currentPageId={1} />
       <Menu tags={tags} />
-    </>
+    </div>
   );
 };
 

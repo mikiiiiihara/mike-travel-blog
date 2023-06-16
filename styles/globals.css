@@ -3,6 +3,14 @@ body {
   padding: 0;
   background: #f3f5f8;
 }
+ul {
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 
 @media (max-width: 768px) {
   .display_none_mobile {
