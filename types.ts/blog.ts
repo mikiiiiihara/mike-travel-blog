@@ -2,7 +2,7 @@ export type Blog = {
   id: string;
   title: string;
   body: string;
-  tags: Tag[];
+  tag: Tag;
   thumbnail: {
     url: string;
   };

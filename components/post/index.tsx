@@ -10,12 +10,9 @@ type Props = {
 const PostComponent: React.FC<Props> = ({ blog }) => {
   return (
     <div className={styles.post}>
-      <Link href="/">ホームへ戻る</Link>
       <h2 className={styles.title}>{blog.title}</h2>
       <p className={styles.publishAt}>{blog.publishAt}</p>
-      {blog.tags.map((tag) => (
-        <TagItem name={tag.tag} key={tag.id} />
-      ))}
+      <TagItem name={blog.tag.tag} key={blog.tag.id} />
       <div
         dangerouslySetInnerHTML={{ __html: `${blog.body}` }}
         className={styles.content}

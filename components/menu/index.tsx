@@ -34,7 +34,7 @@ const MenuComponent: React.FC<Props> = ({ tags }) => {
             <div>
               <h2>タグ一覧</h2>
               {tags.map((tag) => (
-                <TagItem name={tag.tag} key={tag.id} />
+                <TagItem name={tag.tag} id={tag.id} key={tag.id} />
               ))}
             </div>
             <div>
