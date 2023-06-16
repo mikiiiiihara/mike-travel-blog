@@ -37,8 +37,45 @@ const MenuComponent: React.FC<Props> = ({ tags }) => {
                 <TagItem name={tag.tag} id={tag.id} key={tag.id} />
               ))}
             </div>
-            <div>
+            <div className={styles.profile}>
               <h2>プロフィール</h2>
+              <div
+                style={{
+                  display: "flex", // Make this a flex container
+                  justifyContent: "center", // Center children horizontally
+                  alignItems: "center", // Center children vertically
+                  height: "auto", // Use 100% of the viewport height
+                }}
+              >
+                <div
+                  style={{
+                    width: "100px",
+                    height: "100px",
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      background: `url(/me.jpg)`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                </div>
+              </div>
+              <h3>Mike</h3>
+              <p>
+                エンジニアをやりながら、
+                <br />
+                暇な時間を見つけてよく海外旅行してます
+              </p>
             </div>
           </div>
         </div>
