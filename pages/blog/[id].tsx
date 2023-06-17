@@ -47,6 +47,11 @@ const Home: React.FC<Props> = ({ blog, tags }) => {
           content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes"
         />
         <meta property="og:image" content={blog.thumbnail.url} />
+        <meta
+          name="twitter:image"
+          content={`https://mike-travel-blog.com/${blog.thumbnail.url}`}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:image:width" content={"1280"} />
         <meta property="og:image:height" content={"640"} />
         <link rel="icon" href="/me.jpg" />
