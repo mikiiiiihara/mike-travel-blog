@@ -2,6 +2,8 @@ import { client } from "../../../libs/client";
 import { Blog, Tag } from "../../../types.ts/blog";
 import { Menu } from "../../../components/menu";
 import { Blogs } from "../../../components/blogs";
+import Head from "next/head";
+import { COMMON_DESCRIPTION } from "../../../constants/constants";
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
@@ -21,12 +23,14 @@ export const getStaticProps = async (context: { params: { id: string } }) => {
     queries: { filters: `tag[equals]${id}` },
   });
   const tag = await client.get({ endpoint: "tag" });
+  const currentTag = tag.contents.find((tagItem: Tag) => tagItem.id === id);
   return {
     props: {
       blogs: data.contents,
       tags: tag.contents,
       totalCount: data.totalCount,
       id: Number(id),
+      currentTagName: currentTag.tag,
     },
   };
 };
@@ -37,11 +41,30 @@ type Props = {
   tags: Tag[];
   totalCount: number;
   id: number;
+  currentTagName: string;
 };
 
-const TagId: React.FC<Props> = ({ blogs, tags, totalCount, id }) => {
+const TagId: React.FC<Props> = ({
+  blogs,
+  tags,
+  totalCount,
+  id,
+  currentTagName,
+}) => {
   return (
     <div className="wrapper">
+      <Head>
+        <title>{currentTagName} -Mike Travel Blog-</title>
+        <meta name="description" content={COMMON_DESCRIPTION} />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes"
+        />
+        <meta property="og:image" content="/ogp.png" />
+        <meta property="og:image:width" content={"1280"} />
+        <meta property="og:image:height" content={"640"} />
+        <link rel="icon" href="/me.jpg" />
+      </Head>
       <Blogs blogs={blogs} totalCount={totalCount} currentPageId={id} />
       <Menu tags={tags} />
     </div>

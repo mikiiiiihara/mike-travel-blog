@@ -5,7 +5,7 @@ import styles from "./footer.module.scss";
 const FooterComponent = () => {
   return (
     <div className={styles.footer}>
-      <Link href="">プライバシーポリシー</Link>
+      <Link href="/terms/privacy-policy">プライバシーポリシー</Link>
       <p>© 2023 Mike Travel Blog</p>
     </div>
   );

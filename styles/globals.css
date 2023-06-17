@@ -10,6 +10,7 @@ ul {
 .wrapper {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 768px) {

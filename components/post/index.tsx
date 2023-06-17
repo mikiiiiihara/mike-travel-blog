@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import styles from "./post.module.scss";
 import { TagItem } from "../tag-item";
 import { Blog } from "../../types.ts/blog";

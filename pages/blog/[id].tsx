@@ -2,6 +2,8 @@ import { client } from "../../libs/client";
 import { Blog, Tag } from "../../types.ts/blog";
 import { Post } from "../../components/post";
 import { Menu } from "../../components/menu";
+import Head from "next/head";
+import { COMMON_DESCRIPTION } from "../../constants/constants";
 
 // SSG
 // microCMSへAPIリクエスト
@@ -37,6 +39,18 @@ type Props = {
 const Home: React.FC<Props> = ({ blog, tags }) => {
   return (
     <div className="wrapper">
+      <Head>
+        <title>{blog.title} -Mike Travel Blog-</title>
+        <meta name="description" content={COMMON_DESCRIPTION} />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes"
+        />
+        <meta property="og:image" content={blog.thumbnail.url} />
+        <meta property="og:image:width" content={"1280"} />
+        <meta property="og:image:height" content={"640"} />
+        <link rel="icon" href="/me.jpg" />
+      </Head>
       <Post blog={blog} /> <Menu tags={tags} />
     </div>
   );
