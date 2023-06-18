@@ -3,6 +3,7 @@ import styles from "./menu.module.scss";
 import { Tag } from "../../types.ts/blog";
 import { TagItem } from "../tag-item";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   tags: Tag[];
@@ -76,6 +77,10 @@ const MenuComponent: React.FC<Props> = ({ tags }) => {
                 <br />
                 暇な時間を見つけてよく海外旅行してます
               </p>
+              Instagram:
+              <Link href="https://www.instagram.com/mike_travel0824/">
+                mike_travel
+              </Link>
             </div>
           </div>
         </div>

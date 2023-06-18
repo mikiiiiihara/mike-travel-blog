@@ -26,7 +26,9 @@ const BlogCardComponent: React.FC<Props> = ({ blog }) => {
           />
         </Link>
       </div>
-      <h2 className={styles.title}>{blog.title}</h2>
+      <Link href={`/blog/${blog.id}`}>
+        <h2 className={styles.title}>{blog.title}</h2>
+      </Link>
     </>
   );
 };

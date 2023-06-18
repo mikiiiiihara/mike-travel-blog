@@ -40,7 +40,7 @@ const Home: React.FC<Props> = ({ blog, tags }) => {
   return (
     <div className="wrapper">
       <Head>
-        <title>{blog.title} -Mike Travel Blog-</title>
+        <title>{blog.title}</title>
         <meta name="description" content={COMMON_DESCRIPTION} />
         <meta
           name="viewport"

@@ -54,7 +54,7 @@ const TagId: React.FC<Props> = ({
   return (
     <div className="wrapper">
       <Head>
-        <title>{currentTagName} -Mike Travel Blog-</title>
+        <title>{currentTagName}</title>
         <meta name="description" content={COMMON_DESCRIPTION} />
         <meta
           name="viewport"
