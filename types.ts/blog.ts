@@ -6,8 +6,8 @@ export type Blog = {
   thumbnail: {
     url: string;
   };
-  publishAt: string;
-  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
 };
 
 export type Tag = {
