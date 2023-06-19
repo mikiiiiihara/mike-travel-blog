@@ -1,5 +1,7 @@
-@media (max-width: 768px) {
-  .title {
+.title {
+  color: black;
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
     display: inline-block;
     width: 54%;
     box-sizing: border-box;
