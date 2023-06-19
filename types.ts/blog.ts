@@ -8,6 +8,7 @@ export type Blog = {
   };
   publishedAt: string;
   revisedAt: string;
+  advertisement?: string;
 };
 
 export type Tag = {
