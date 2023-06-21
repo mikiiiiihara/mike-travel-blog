@@ -4,6 +4,8 @@ import { Tag } from "../../types.ts/blog";
 import { TagItem } from "../tag-item";
 import Image from "next/image";
 import Link from "next/link";
+import parse from "html-react-parser";
+import { AD_CONTENT } from "../../constants/constants";
 
 type Props = {
   tags: Tag[];
@@ -82,6 +84,8 @@ const MenuComponent: React.FC<Props> = ({ tags }) => {
                 mike_travel
               </Link>
             </div>
+            {/* 広告欄 */}
+            <div>{parse(AD_CONTENT)}</div>
           </div>
         </div>
       </div>
