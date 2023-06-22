@@ -5,6 +5,8 @@ import { TagItem } from "../tag-item";
 import { Blog } from "../../types.ts/blog";
 import { format } from "date-fns";
 import parse from "html-react-parser";
+import { renderToc } from "../../libs/renderToc";
+import { TocContent } from "../toc-content";
 
 type Props = {
   blog: Blog;
@@ -21,6 +23,7 @@ const replaceLtWithAngleBracket = (input: string) => {
 const PostComponent: React.FC<Props> = ({ blog }) => {
   // html-entitiesを使用してHTMLエンティティをデコードする
   const decodedString = replaceLtWithAngleBracket(blog.body);
+  const tocs = renderToc(decodedString);
   return (
     <div className={styles.post}>
       <h2 className={styles.title}>{blog.title}</h2>
@@ -39,6 +42,9 @@ const PostComponent: React.FC<Props> = ({ blog }) => {
           style={{ position: "relative" }}
           alt="thumbnail"
         />
+      </div>
+      <div className={styles.content}>
+        <TocContent tocs={tocs} />
       </div>
       <div className={styles.content}>{parse(decodedString)}</div>
       <div className={styles.content}>{parse(blog.advertisement || "")}</div>

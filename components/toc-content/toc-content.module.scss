@@ -1,0 +1,12 @@
+.topContent {
+  > ul {
+    list-style: none;
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 5px;
+    > li > a {
+      color: rgb(101, 101, 101);
+      line-height: 2rem;
+    }
+  }
+}

@@ -85,7 +85,10 @@ const MenuComponent: React.FC<Props> = ({ tags }) => {
               </Link>
             </div>
             {/* 広告欄 */}
-            <div>{parse(AD_CONTENT)}</div>
+            <div className={styles.adContent}>
+              <h2>ピックアップ</h2>
+              {parse(AD_CONTENT)}
+            </div>
           </div>
         </div>
       </div>
