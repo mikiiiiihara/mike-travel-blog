@@ -9,6 +9,16 @@ ul {
   padding: 0;
 }
 
+.adImage > a {
+  display: flex;
+  justify-content: center;
+}
+
+.adImage > a > img {
+  width: 60%;
+  height: auto;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;

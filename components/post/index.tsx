@@ -7,23 +7,15 @@ import { format } from "date-fns";
 import parse from "html-react-parser";
 import { renderToc } from "../../libs/renderToc";
 import { TocContent } from "../toc-content";
+import { generatePostBody } from "../../libs/generatePostBody";
 
 type Props = {
   blog: Blog;
 };
 
-// リッチテキスト内にリンクが埋め込まれていた場合、変換してあげる。
-const replaceLtWithAngleBracket = (input: string) => {
-  let replaced = input.replace(/&lt;/g, "<");
-  replaced = replaced.replace(/&gt;/g, ">");
-  replaced = replaced.replace(/&quot;/g, '"');
-  return replaced;
-};
-
 const PostComponent: React.FC<Props> = ({ blog }) => {
-  // html-entitiesを使用してHTMLエンティティをデコードする
-  const decodedString = replaceLtWithAngleBracket(blog.body);
-  const tocs = renderToc(decodedString);
+  const body = generatePostBody(blog.body);
+  const tocs = renderToc(body);
   return (
     <div className={styles.post}>
       <h2 className={styles.title}>{blog.title}</h2>
@@ -46,8 +38,7 @@ const PostComponent: React.FC<Props> = ({ blog }) => {
       <div className={styles.content}>
         <TocContent tocs={tocs} />
       </div>
-      <div className={styles.content}>{parse(decodedString)}</div>
-      <div className={styles.content}>{parse(blog.advertisement || "")}</div>
+      <div className={styles.content}>{parse(body)}</div>
     </div>
   );
 };
