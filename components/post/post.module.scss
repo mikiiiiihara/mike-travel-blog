@@ -84,4 +84,9 @@
       height: auto;
     }
   }
+  @media (max-width: 768px) {
+    figure {
+      margin: 0;
+    }
+  }
 }
