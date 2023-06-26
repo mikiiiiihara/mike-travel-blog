@@ -40,3 +40,8 @@ ul {
     display: inline-block;
   }
 }
+
+.marker {
+  font-weight: bold;
+  background: linear-gradient(transparent 60%, #ffd0d1 60%);
+}
