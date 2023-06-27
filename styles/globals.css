@@ -54,7 +54,7 @@ ul {
   vertical-align: top;
 }
 .icon {
-  width: 200px;
+  width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import parse from "html-react-parser";
 import { AD_CONTENT } from "../../constants/constants";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 type Props = {
   tags: Tag[];
 };
@@ -73,16 +74,20 @@ const MenuComponent: React.FC<Props> = ({ tags }) => {
                   />
                 </div>
               </div>
-              <h3>Mike</h3>
+              <div className={styles.me}>
+                <h3>Mike</h3>
+                <Link
+                  href="https://www.instagram.com/mike_travel0824/"
+                  className={styles.instagram}
+                >
+                  <FontAwesomeIcon icon={faInstagram} size="xs" />
+                </Link>
+              </div>
               <p>
                 エンジニアをやりながら、
                 <br />
                 暇な時間を見つけてよく海外旅行してます
               </p>
-              Instagram:
-              <Link href="https://www.instagram.com/mike_travel0824/">
-                mike_travel
-              </Link>
             </div>
             {/* 広告欄 */}
             <div className={styles.adContent}>

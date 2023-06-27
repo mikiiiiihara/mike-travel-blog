@@ -10,6 +10,19 @@
   text-align: center;
   .profile {
     text-align: center;
+    .me {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > h3 {
+        margin-right: 6px;
+        margin-top: 6px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .instagram {
+    width: 20px;
   }
   @media (max-width: 768px) {
     width: 70%;
