@@ -24,3 +24,18 @@ export type HTML = {
   fieldId: "HTML";
   html: string;
 };
+
+export type Comments = {
+  fieldId: "comments";
+  comments: Comment[];
+};
+
+export type Comment = {
+  fieldId: "comment";
+  image: {
+    url: string;
+  };
+  name: string;
+  isRight: boolean;
+  body: string;
+};

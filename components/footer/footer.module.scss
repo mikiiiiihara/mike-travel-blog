@@ -1,20 +1,22 @@
 .footer {
-  padding: 0.6rem;
-  color: white;
-  text-align: center;
-  background: rgb(78, 65, 226);
-  > a {
+  .bottomContent {
+    padding: 0.6rem;
     color: white;
-    margin: 1rem;
-  }
-  img {
-    width: 60%;
-    height: auto;
-    @media (max-width: 768px) {
-      width: 100%;
+    text-align: center;
+    background: rgb(78, 65, 226);
+    > a {
+      color: white;
+      margin: 1rem;
     }
-  }
-  a {
-    margin: 0;
+    img {
+      width: 60%;
+      height: auto;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    a {
+      margin: 0;
+    }
   }
 }

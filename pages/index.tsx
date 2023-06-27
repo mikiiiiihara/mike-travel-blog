@@ -29,7 +29,6 @@ type Props = {
   totalCount: number;
 };
 
-// TODO: tagページ作る
 // TODO: パンくずリスト表示してあげる
 const Home: React.FC<Props> = ({ blogs, tags, totalCount }) => {
   return (

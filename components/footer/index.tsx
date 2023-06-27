@@ -5,9 +5,10 @@ import styles from "./footer.module.scss";
 const FooterComponent = () => {
   return (
     <div className={styles.footer}>
-      <br />
-      <Link href="/terms/privacy-policy">プライバシーポリシー</Link>
-      <p>© 2023 Mike Travel Blog</p>
+      <div className={styles.bottomContent}>
+        <Link href="/terms/privacy-policy">プライバシーポリシー</Link>
+        <p>© 2023 Mike Travel Blog</p>
+      </div>
     </div>
   );
 };

@@ -15,6 +15,7 @@ type Props = {
 
 const PostComponent: React.FC<Props> = ({ blog }) => {
   const body = generatePostBody(blog.body);
+  // 目次生成
   const tocs = renderToc(body);
   return (
     <div className={styles.post}>
