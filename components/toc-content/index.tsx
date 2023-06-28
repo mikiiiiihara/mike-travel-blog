@@ -9,7 +9,6 @@ type Props = {
   }[];
 };
 const TocComponent: React.FC<Props> = ({ tocs }) => {
-  console.log(tocs);
   const generateIndent = (tagName: string) => {
     switch (tagName) {
       case "h2":
