@@ -50,8 +50,15 @@ ul {
 }
 
 .sticky-blue {
-  border-color: #0066cc;
+  border-left: 6px solid #0066cc;
   background-color: #e5f2ff;
+  border-radius: 4px;
+  padding: 1rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: bold;
 }
 
 /* 吹き出し用 */
