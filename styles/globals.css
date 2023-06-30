@@ -49,6 +49,11 @@ ul {
   background: linear-gradient(transparent 60%, #ffd0d1 60%);
 }
 
+.sticky-blue {
+  border-color: #0066cc;
+  background-color: #e5f2ff;
+}
+
 /* 吹き出し用 */
 .comment {
   display: flex;
