@@ -6,4 +6,9 @@
   border-radius: 0.3rem;
   display: inline-block;
   text-decoration: none;
+  @media (max-width: 768px) {
+    margin: 0.1rem;
+    padding: 0.3rem;
+    font-size: 0.6rem;
+  }
 }
