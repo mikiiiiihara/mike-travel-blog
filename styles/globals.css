@@ -65,7 +65,6 @@ ul {
 .comment {
   display: flex;
   align-items: stretch;
-  justify-content: center; /* 横方向の中央揃え */
   vertical-align: top;
 }
 .icon {
@@ -76,8 +75,8 @@ ul {
   justify-content: center;
 }
 .icon > img {
-  width: 100%;
-  height: 100%; /* Adjust this value based on your needs */
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
 }
 .icon > p {
@@ -90,9 +89,6 @@ ul {
 @media (max-width: 768px) {
   .comment {
     font-size: 12px;
-  }
-  .icon {
-    width: 210px;
   }
 }
 
@@ -107,6 +103,13 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 82%;
+}
+
+@media (max-width: 768px) {
+  .comment > p {
+    max-width: 64%;
+  }
 }
 
 .comment > p:after {
