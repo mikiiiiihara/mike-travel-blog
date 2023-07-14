@@ -12,6 +12,10 @@ ul {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .adImage > a {
   display: flex;
   justify-content: center;
@@ -120,4 +124,24 @@ ul {
   margin-top: -10px;
   border: 10px solid transparent;
   border-right: 10px solid #f9f9f9;
+}
+
+.banner-click-button-primary {
+  background-color: #3eb370;
+  display: block;
+  width: 200px;
+  font-size: 1.2rem;
+  color: white;
+  padding: 0.6rem;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .banner-click-button-primary {
+    width: 90%;
+  }
+}
+
+.banner-click-button-primary:hover {
+  opacity: 0.6;
 }
