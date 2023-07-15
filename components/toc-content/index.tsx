@@ -11,9 +11,9 @@ type Props = {
 const TocComponent: React.FC<Props> = ({ tocs }) => {
   const generateIndent = (tagName: string) => {
     switch (tagName) {
-      case "h2":
-        return "　・";
       case "h3":
+        return "　・";
+      case "h4":
         return "　　・";
       default:
         return "・";
@@ -21,7 +21,7 @@ const TocComponent: React.FC<Props> = ({ tocs }) => {
   };
   return (
     <div className={styles.topContent}>
-      <h1>目次</h1>
+      <h2>目次</h2>
       <ul>
         {tocs.map((toc) => (
           <li key={toc.id}>
