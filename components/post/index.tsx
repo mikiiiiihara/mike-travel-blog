@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./post.module.scss";
 import Image from "next/image";
 import { TagItem } from "../tag-item";
-import { Blog } from "../../types.ts/blog";
+import { Blog } from "../../types/blog";
 import { format } from "date-fns";
 import parse from "html-react-parser";
 import { renderToc } from "../../libs/renderToc";

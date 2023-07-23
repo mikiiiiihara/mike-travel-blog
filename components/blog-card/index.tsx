@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./blog-card.module.scss";
-import { Blog } from "../../types.ts/blog";
+import { Blog } from "../../types/blog";
 import { TagItem } from "../tag-item";
 
 type Props = {

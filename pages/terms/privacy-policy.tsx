@@ -1,5 +1,5 @@
 import { client } from "../../libs/client";
-import { Tag } from "../../types.ts/blog";
+import { Tag } from "../../types/blog";
 import { Menu } from "../../components/menu";
 import Head from "next/head";
 import { PrivacyPost } from "../../components/custom-post/privacy-post";

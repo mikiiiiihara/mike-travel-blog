@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./blogs.module.scss";
 import { BlogCard } from "../blog-card";
 import { Pagination } from "../pagination";
-import { Blog } from "../../types.ts/blog";
+import { Blog } from "../../types/blog";
 
 type Props = {
   blogs: Blog[];

@@ -1,4 +1,4 @@
-import { Comment, Comments, HTML, RichEditor } from "../types.ts/blog";
+import { Comment, Comments, HTML, RichEditor } from "../types/blog";
 
 // richEditor、HTMLを合体してhtml文字列を作成する。
 export const generatePostBody = (body: (RichEditor | HTML | Comments)[]) => {

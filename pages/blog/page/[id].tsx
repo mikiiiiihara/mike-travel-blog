@@ -1,5 +1,5 @@
 import { client } from "../../../libs/client";
-import { Blog, Tag } from "../../../types.ts/blog";
+import { Blog, Tag } from "../../../types/blog";
 import { COMMON_DESCRIPTION, PER_PAGE } from "../../../constants/constants";
 import { Menu } from "../../../components/menu";
 import { Blogs } from "../../../components/blogs";

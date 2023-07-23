@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./menu.module.scss";
-import { Tag } from "../../types.ts/blog";
+import { Tag } from "../../types/blog";
 import { TagItem } from "../tag-item";
 import Image from "next/image";
 import Link from "next/link";
